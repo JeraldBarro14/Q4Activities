@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q4 Exercise 5</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Bruno+Ace+SC&family=Gajraj+One&family=Josefin+Sans:wght@100;600&family=Julee&family=Noto+Serif:ital@1&family=Roboto+Condensed:wght@300&family=Sassy+Frass&family=Staatliches&family=Teko:wght@300&display=swap" rel="stylesheet">
+
+<style type="text/css">
+	img{
+		width: 150px;
+	}
+	#fig1, #fig2{
+		width: 500px;
+	}
+	h1{
+		font-family: Bruno Ace SC;
+	}
+	hr{
+		height: 2px;
+		border-top: 1px solid;
+	}
+
+	p{
+		font-family: Abel;
+	}
+	body{
+		background: url("https://img.freepik.com/free-vector/vintage-science-background_23-2148544912.jpg");
+	}
+
+		.profile{
+	border-radius: 50%;
+	height: 50px;
+	border-style: inset;
+	border-color: rosybrown;
+	height: 50px;
+	width: 50px;
+		}
+
+</style>
+
+</head>
+<body>
+	<div class="container mt-3 bg-light">
+	<center><h1><b>What Makes a Light Bulb Light Up? 💡</b></h1>
+	<p>It's no WONDER that inventors of the past yearned for a simple solution to lighting their way in the dark. In the late 1800s, two inventors — American Thomas Edison and Englishman Sir Joseph Swan — came up with the same invention independently around the same time: the light bulb.</i></p><hr>
+	<audio id="audio" src="electric-hum.mp3"></audio>
+
+<center>
+<video width="500" height="320" controls="controls">
+	<source src="Video.mp4" type="video/mp4">
+</video>
+</center><hr>
+
+	<button class="btn btn-warning" onmouseover="On()" onmouseout="Off()">SWITCH LIGHTS ON</button>
+	<img src="switchOFF.png" id="Bulb"><hr></center>
+
+	<center><h1><b> The Ohm's Law Equation 🧮</b></h1></center>
+	<p>Current tends to move through the conductors with some degree of friction, or opposition to motion. This opposition to motion is more properly called resistance. The amount of current in a circuit depends on the amount of voltage and the amount of resistance in the circuit to oppose current flow (<kbd>Voltage(E) =  Current(I)Resistance(R)</kbd>).</p><br>
+	<img src="fig1.png" id='fig1'><hr>
+
+	<p> <b>📟 Instruction:</b> Solve for the value of current (I)</p>
+
+	<div class="row">
+		<div class="col-6">
+			<img src="fig2.png" id='fig2'><br>
+		</div>
+		<div class="col-6 mt-5">
+
+	Enter <b>Voltage (E)</b>: <input type="text" id="V" class="form-control"><br>
+	Enter <b>Resistance (R)</b>: <input type="text" id="R" class="form-control"><br>
+	<input type="submit" value="COMPUTE" class="btn btn-info" onclick="Compute()">
+	<br> <h5 id="Output"></h5>
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+		function On(){
+			document.getElementById('Bulb').src = "switchON.png";
+			document.getElementById('audio').play();
+		}
+		function Off(){
+			document.getElementById('Bulb').src = "switchOFF.png";
+			document.getElementById('audio').pause();
+		}
+		function Compute (){
+			let Voltage = document.getElementById('V').value;
+			let Resistance = document.getElementById('R').value; 
+			let Current = Voltage/Resistance;
+			document.getElementById('Output').innerHTML = "The Value of the Current (I) is: " + Current; 
+		}
+
+	</script>
+
+<hr>
+	<p>Sources: <br><br>
+	<a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">www.wonderpolis.org</a></p>
+	<p><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">www.allaboutcircuits.com</p>
+
+
+	
+
+<center><footer><small>&copy; JFBarro 2022</small><footer>
+	<img src="Footer.jpg" class="profile"> </footer></center>
+
+</div>
+
+</body>
+</html>
